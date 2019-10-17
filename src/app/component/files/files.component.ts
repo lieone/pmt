@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FilesService } from '@app/service/files.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PomodoroTimerService } from '@app/service/pomodoro-timer.service';
 
 @Component({
   selector: 'app-files',
@@ -7,19 +7,12 @@ import { FilesService } from '@app/service/files.service';
   styleUrls: ['./files.component.scss']
 })
 export class FilesComponent implements OnInit {
-  public files: string[] = [];
-  constructor(private filesService: FilesService) { }
+
+  constructor(private pomodoroTimerService: PomodoroTimerService) { }
 
   async ngOnInit() {
-    this.files = await this.filesService.readUserFiles();
-  }
-
-  async onDirValueChange(dir: string) {
-    try {
-      this.files = await this.filesService.readFiles(dir);
-    } catch (e) {
-      console.warn(e);
-    }
+    await this.pomodoroTimerService.startTimer(25000, { time: 1000, callback: console.log });
+    console.log('end');
   }
 
 }
