@@ -21,7 +21,7 @@
               "path": "./config/webpack.renderer.config.js",
               "mergeStrategies": { "externals": "replace" }
             },
-            "outputPath": "dist/cfm",
+            "outputPath": "target",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

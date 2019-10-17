@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: target,
-    filename: 'main/index.js',
+    filename: 'app.js',
     publicPath: '/',
     devtoolModuleFilenameTemplate: 'file:///[absolute-resource-path]'
   },

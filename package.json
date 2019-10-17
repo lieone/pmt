@@ -1,18 +1,35 @@
 {
   "name": "pmt",
+  "author": {
+    "name": "John Galt",
+    "email": "kgorodetsky@yandex.ru"
+  },
   "version": "0.0.0",
-  "main": "dist/main",
+  "main": "target/app.js",
+  "build": {
+    "appId": "com.example.myapp",
+    "files": [
+      "./target/**/*"
+    ],
+    "linux": {
+      "target": "deb"
+    },
+    "asar": false
+  },
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others \"npm run main:dev\" \"npm run renderer:dev\"",
-    "build": "ng build",
+    "clean": "rimraf ./dist",
+    "renderer:dist": "ng build --base-href ./",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "main:dev": "cross-env NODE_ENV=development webpack --config ./config/webpack.main.config.js -w",
     "main:dist": "cross-env NODE_ENV=production webpack --config ./config/webpack.main.config.js",
     "renderer:dev": "ng serve",
-    "electron:dev": "electron ."
+    "electron:dev": "electron .",
+    "prepackage": "npm run clean && npm run renderer:dist && npm run main:dist",
+    "package": "electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -43,7 +60,8 @@
     "codelyzer": "^5.0.0",
     "concurrently": "5.0.0",
     "cross-env": "5.2.0",
-    "electron": "5.0.6",
+    "electron": "6.0.12",
+    "electron-builder": "21.2.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "4.4.0",
