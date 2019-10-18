@@ -11,8 +11,6 @@ export class FilesComponent implements OnInit {
   constructor(private pomodoroTimerService: PomodoroTimerService) { }
 
   async ngOnInit() {
-    await this.pomodoroTimerService.startTimer(5000, { time: 1000, callback: console.log });
-    console.log('end');
   }
 
 }

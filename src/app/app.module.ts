@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilesComponent } from './component/files/files.component';
 import { TextInputComponent } from './component/input/text-input/text-input.component';
+import { TimerClockComponent } from './component/timer-clock/timer-clock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilesComponent,
-    TextInputComponent
+    TextInputComponent,
+    TimerClockComponent
   ],
   imports: [
     BrowserModule,
