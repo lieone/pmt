@@ -25,4 +25,8 @@ export class TimerClockComponent implements OnInit {
     this.timerService.startTimer(25 * 60 * 1000);
   }
 
+  getFormatedTime() {
+    return `${('' + this.minutes).padStart(2, '0')}:${('' + this.seconds).padStart(2, '0')}`;
+  }
+
 }
