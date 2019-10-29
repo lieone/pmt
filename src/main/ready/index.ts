@@ -8,6 +8,7 @@ export const onReady = () => {
     resizable: false,
     width: 300,
     height: 200,
+    frame: false,
     webPreferences: {
       nodeIntegration: true
     }

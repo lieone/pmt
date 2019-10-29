@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { FilesComponent } from './component/files/files.component';
 import { TextInputComponent } from './component/input/text-input/text-input.component';
 import { TimerClockComponent } from './component/timer-clock/timer-clock.component';
+import { StatusBarComponent } from './component/status-bar/status-bar.component';
+import { WindowButtonsComponent } from './component/status-bar/window-buttons/window-buttons.component';
+import { TitleBarComponent } from './component/status-bar/title-bar/title-bar.component';
+import { MenuBarComponent } from './component/status-bar/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilesComponent,
     TextInputComponent,
-    TimerClockComponent
+    TimerClockComponent,
+    StatusBarComponent,
+    WindowButtonsComponent,
+    TitleBarComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,

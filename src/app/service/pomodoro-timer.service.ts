@@ -22,8 +22,8 @@ export class PomodoroTimerService {
     this.timerSubscription = interval(1000)
     .pipe(
       take(timeout / 1000),
-      map(count => timeout - ++count * 1000)
-    ).subscribe(this.timeLeft);
+      map(count => timeout - (count + 1) * 1000)
+    ).subscribe(e => this.timeLeft.emit(e));
   }
 
 }

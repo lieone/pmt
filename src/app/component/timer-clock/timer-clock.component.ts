@@ -22,7 +22,7 @@ export class TimerClockComponent implements OnInit {
   }
 
   startTimer() {
-    this.timerService.startTimer(25 * 60 * 1000);
+    this.timerService.startTimer(.1 * 60 * 1000);
   }
 
   getFormatedTime() {
